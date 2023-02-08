@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content ="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Birdle </title>
+	
+	<script src="Bmain.js"></script>
+	<link rel="stylesheet" href="Bstylesheet.css"/>
+</head>
+<body>
+	<div id="container">
+		<div id="game">
+			<header>
+				<h1 class = "title">Birdle by Noam Zimet</h1>
+				<p id="gameInfo"></p>
+				<img id ="bird" src ="severalBirds.jpeg" width = 200px height = 200px>
+			</header>
+			<div id ="board-container">
+				<div id="board"></div>s
+			</div>
+			<div id="keyboard-container">
+				<div class = "keyboard-row">
+					<button data-key = "q" id="Q ">q</button>
+					<button data-key = "w" id="W" >w</button>
+					<button data-key = "e" id="E" >e</button>
+					<button data-key = "r" id="R" >r</button>
+					<button data-key = "t" id="T" >t</button>
+					<button data-key = "y" id="Y" >y</button>
+					<button data-key = "u" id="U" >u</button>
+					<button data-key = "i" id="I" >i</button>
+					<button data-key = "o" id="O" >o</button>
+					<button data-key = "p" id="P" >p</button>
+				</div>
+				<div class = "keyboard-row">
+					<div class="spacer-half"></div> <!-- CSS for this that makes it so the second row doesn't take up the whole row (just like on a regular keyboard) -->
+					<button data-key = "a" id="A" >a</button>
+					<button data-key = "s" id="S" >s</button>
+					<button data-key = "d" id="D" >d</button>
+					<button data-key = "f" id="F" >f</button>
+					<button data-key = "g" id="G" >g</button>
+					<button data-key = "h" id="H" >h</button>
+					<button data-key = "j" id="J" >j</button>
+					<button data-key = "k" id="K" >k</button>
+					<button data-key = "l" id="L" >l</button>
+					<div class="spacer-half"></div>
+				</div>
+				<div class = "keyboard-row">
+					<button data-key = "enter" class="wide-button">Enter</button>
+					<button data-key = "z" id="Z" >z</button>
+					<button data-key = "x" id="X" >x</button>
+					<button data-key = "c" id="C" >c</button>
+					<button data-key = "v" id="V" >v</button>
+					<button data-key = "b" id="B" >b</button>
+					<button data-key = "n" id="N" >n</button>
+					<button data-key = "m" id="M" >m</button>
+					<button data-key = "del" class="wide-button">Del</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

@@ -1,0 +1,137 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body{ /*if I have this here, do I still need to define it later?*/
+	height: 100%;
+	font-family: "Lucida Sans";
+}
+
+/*
+#robinImage{
+	display: inline-flex;
+	filter: blur(10px);
+  -webkit-filter: blur(10px);
+}
+*/
+
+#container{
+	display: flex;
+	background-color: black;
+	height: 100%;
+	align-items: center;
+	flex-direction: column;
+}
+
+/*makes the keyboard take up to 500px on the screen*/
+#game{
+	width: 100%;
+	max-width: 500px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+/*makes the small line underneath the word "wordle"*/
+header{
+	border-bottom: 1px solid rgb(58,58,60);
+}
+
+.title{
+	display: flex;
+	color: gainsboro;
+	font-size: 30px;
+	font-weight: bold;
+	margin: 5px 0 5px 0;
+	text-align: center;
+	font-style: italic;
+	justify-content: center;
+}
+
+#bird{
+	margin: auto; /*allows it to actually be in the center */
+	display: block; /*allows it to actually be in the center */
+	color: blue;
+	text-align: center;
+	font-family: "Lucida Sans";
+}
+
+#gameInfo{
+	margin: auto; /*allows it to actually be in the center */
+	display: block; /*allows it to actually be in the center */
+	color: white;
+	text-align: center;
+	font-family: "Lucida Sans";
+	font-size: x-large;
+}
+
+#board-container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-grow: 1;
+	/*overflow: hidden; /*this hides it when the keyboard moves over */
+}
+
+#board{
+	display: grid;
+	grid-template-columns: repeat(var(--NOL),1fr); /*var and -- allows it to be called upon in JS*/
+	grid-gap: 5px;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.square{
+	border: 2px solid rgb(58,58,60);
+	min-width: 60px;
+	min-height: 60px;
+	font-size: 50px;
+	font-weight: bold;
+	color:  gainsboro;
+	text-transform: uppercase;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#keyboard-container{
+	height: 150px;
+}
+
+.keyboard-row{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin: 0 auto 10px auto;
+	touch-action: manipulation; /*used in case the user is scrolling rather than actually clicking the button*/
+}
+
+.keyboard-row button{
+	font-family: inherit;
+	font-weight: bold;
+	border: 0;
+	padding: 0;
+	height: 43px;
+	cursor: pointer; /*cursor is a pointer when you mouse over a button*/
+	background-color: rgb(129,131,132);
+	color: rgb(215,215,215);
+	flex-grow: 1; /*makes all elements take up the same amount of space (and the right amount proportional to how much space is left)*/
+	text-transform: uppercase;
+	margin-right: 6px;
+	border-radius: 4px;
+	border-color: white;
+	user-select: none; /*makes some text non-selectable. Don't think this is necessary*/
+}
+
+/*makes buttons with the class wide-button take up 1.5 times as much space*/
+.keyboard-row button.wide-button{
+	flex-grow: 1.5;
+}
+
+
+.spacer-half{ /*this is not a button in html which is why it doesn't have the .keyboard row button part*/
+	flex-grow: 0.5;
+}
