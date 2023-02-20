@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 	//global variables
-	let numberOfLettersGuessed = 0;
 	// let guessedWords = [];
 
 	let listOfWords = ["robin",
@@ -75,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			if(event.keyCode>=65 && event.keyCode <=90){ //only accept chars from A-Z
 				currentWord.push(String.fromCharCode(event.keyCode)); //stores it in a string based on the entering on the keyboard
 			}
-			for (let i=0; i<currentWord.length; i++){
+			for (i=0; i<currentWord.length; i++){
 				wordId = "row"+numberOfGuesses+"col"+i;
 				document.getElementById(wordId).innerHTML = currentWord[i];
 				console.log(wordId)
@@ -96,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	function checkWord(word){
 		if(checkWordLength(word)){ //only do it if the word is actually 5 letters
 			wordComparison(word);
-			numberOfLettersGuessed = 0;
+			// numberOfLettersGuessed = 0;
 		}
 	}
 
@@ -112,11 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	}
 
-
-
-
-
-
 	function wordComparison(word){
 		for (let i=0; i<numberOfLetters; i++){
 			// console.log("Word[i] is " + word[i]);
@@ -125,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			document.getElementById(wordId).style.backgroundColor = "grey"; //default color is grey
 			document.getElementById(word[i]).style.backgroundColor = "white";
 			for(let j=0; j<numberOfLetters; j++){
-				if(word[i] == secretWord[j]){ //this is j to allow it to loop throug all the characters in the word
+				if(word[i] == secretWord[j]){ //this is j to allow it to loop through all the characters in the word
 					if(i==j){
 						document.getElementById(wordId).style.backgroundColor = "green"; //make the square green
 						document.getElementById(word[i]).style.backgroundColor = "green"; //make the keyboard key green
