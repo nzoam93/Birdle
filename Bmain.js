@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	let listOfWords = ["robin",
 					"goose",
 					"finch",
-					//    "warbler",
+					"heron",
 					"pigeon",
 					"turkey"];
 	let randomNumber = Math.floor((Math.random() * listOfWords.length))
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	let birdImages = ["robinImage.jpeg",
 					"gooseImage.jpeg",
 					"finchImage.jpeg",
-					//   "warblerImage.jpeg",
+					"heronImage.jpeg",
 					"pigeonImage.jpeg",
 					"turkeyImage.jpeg"];
 	let birdImage = birdImages[randomNumber];
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	let messages = ["These birds are known for having red chests.",
 					"These birds are known for having cute goslings",
 					"These birds are known for their aerial antics.",
-					// "These birds have striking yellow chests.",
+					"These birds can be found along Lake Merritt.",
 					"Pigeons are known to be able to fly back to their home hundreds of miles away.",
 					"Turkeys were the second choice to bald eagles for the US national bird"];
 	let message = messages[randomNumber];
@@ -70,18 +70,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	document.addEventListener("keydown",function(event){
 		let wordId = "";
+		// for (i=0; i<currentWord.length; i++){
+		// 	wordId = "row"+numberOfGuesses+"col"+i;
+		// }
+		wordId = "row"+numberOfGuesses+"col"+currentWord.length
 		if(currentWord.length<numberOfLetters){
 			if(event.keyCode>=65 && event.keyCode <=90){ //only accept chars from A-Z
 				currentWord.push(String.fromCharCode(event.keyCode)); //stores it in a string based on the entering on the keyboard
 			}
-			for (i=0; i<currentWord.length; i++){
-				wordId = "row"+numberOfGuesses+"col"+i;
-				document.getElementById(wordId).innerHTML = currentWord[i];
-				console.log(wordId)
-			}
+			document.getElementById(wordId).innerHTML = currentWord[currentWord.length - 1]; //getting the last character
 		}
 		if(event.keyCode == 8){ //if backspace
-
+			// debugger
 			console.log(wordId)
 			currentWord.pop(); //gets rid of 1 letter
 			document.getElementById(wordId).innerHTML = "";
